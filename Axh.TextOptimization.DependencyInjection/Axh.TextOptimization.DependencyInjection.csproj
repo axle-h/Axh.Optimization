@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3615A082-13A9-432D-A815-19B378615026}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Axh.TextOptimization.DependencyInjection</RootNamespace>
+    <AssemblyName>Axh.TextOptimization.DependencyInjection</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationModule.cs" />
+    <Compile Include="BootStrapper.cs" />
+    <Compile Include="OptimizerModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Axh.TextOptimization.Contracts\Axh.TextOptimization.Contracts.csproj">
+      <Project>{ba66b437-c3a6-4ba9-9d6b-b405baeca5c7}</Project>
+      <Name>Axh.TextOptimization.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Axh.TextOptimization\Axh.TextOptimization.csproj">
+      <Project>{4d4f68f4-d1fc-4915-a70f-19931b5cc72c}</Project>
+      <Name>Axh.TextOptimization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Axh.Optimization.Config.Contracts\Axh.Optimization.Config.Contracts.csproj">
+      <Project>{2ce60a34-7703-4f70-8b3c-2837a79a7b8f}</Project>
+      <Name>Axh.Optimization.Config.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Axh.Optimization.Config\Axh.Optimization.Config.csproj">
+      <Project>{6e5befb0-6418-45b7-b073-66ebf06532d6}</Project>
+      <Name>Axh.Optimization.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Axh.Optimization.DomainModels\Axh.Optimization.DomainModels.csproj">
+      <Project>{f2a7b418-3825-4337-b865-6696b9fc955d}</Project>
+      <Name>Axh.Optimization.DomainModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Axh.Optimization.GeneticAlgorithm.Contracts\Axh.Optimization.GeneticAlgorithm.Contracts.csproj">
+      <Project>{1bc56441-2f5c-4268-afaf-4aa8f68d6762}</Project>
+      <Name>Axh.Optimization.GeneticAlgorithm.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Axh.Optimization.GeneticAlgorithm.StringPattern.Contracts\Axh.Optimization.GeneticAlgorithm.StringPattern.Contracts.csproj">
+      <Project>{5F795E24-0323-4941-AA4D-47A98D46DC50}</Project>
+      <Name>Axh.Optimization.GeneticAlgorithm.StringPattern.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Axh.Optimization.GeneticAlgorithm.StringPattern\Axh.Optimization.GeneticAlgorithm.StringPattern.csproj">
+      <Project>{A004DD14-9398-41D1-9E8E-C6B7CB5F8164}</Project>
+      <Name>Axh.Optimization.GeneticAlgorithm.StringPattern</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Axh.Optimization.GeneticAlgorithm\Axh.Optimization.GeneticAlgorithm.csproj">
+      <Project>{c8a27121-281f-46b9-8d1d-99f2c6138ea1}</Project>
+      <Name>Axh.Optimization.GeneticAlgorithm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Axh.Optimization.Repositories.StringPatterns.Contracts\Axh.Optimization.Repositories.StringPatterns.Contracts.csproj">
+      <Project>{1b0efbc3-12d7-416d-b363-013a140e8f77}</Project>
+      <Name>Axh.Optimization.Repositories.StringPatterns.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Axh.Optimization.Repositories.StringPatterns\Axh.Optimization.Repositories.StringPatterns.csproj">
+      <Project>{c56fcd07-1a6d-4774-bd76-19ec26bfdbb2}</Project>
+      <Name>Axh.Optimization.Repositories.StringPatterns</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Axh.Optimization.Services.RandomService.Contracts\Axh.Optimization.Services.RandomService.Contracts.csproj">
+      <Project>{E20E8444-F7AC-4BE7-A345-7301C6153F74}</Project>
+      <Name>Axh.Optimization.Services.RandomService.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Axh.Optimization.Services.RandomService\Axh.Optimization.Services.RandomService.csproj">
+      <Project>{18F625B0-94F2-45E8-AFFB-B33F9EE34439}</Project>
+      <Name>Axh.Optimization.Services.RandomService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Axh.Optimization.Services.SpellCheckerService.Contracts\Axh.Optimization.Services.SpellCheckerService.Contracts.csproj">
+      <Project>{f7fe40d9-c787-4a38-ac39-8a7397a57920}</Project>
+      <Name>Axh.Optimization.Services.SpellCheckerService.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Axh.Optimization.Services.SpellCheckerService\Axh.Optimization.Services.SpellCheckerService.csproj">
+      <Project>{97d7e196-9f7f-459e-920f-e41589538501}</Project>
+      <Name>Axh.Optimization.Services.SpellCheckerService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
